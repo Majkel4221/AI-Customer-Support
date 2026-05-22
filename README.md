@@ -78,4 +78,4 @@ https://nodejs.org
 ## 2. Clone or Download the Project
 
 ```bash
-git clone YOUR_REPOSITORY_LINK
+git clone (https://github.com/Majkel4221/AI-Customer-Support)
