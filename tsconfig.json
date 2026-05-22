@@ -1,0 +1,148 @@
+# 🤖 AI Customer Support - Inteligentny Chatbot & Panel Zarządzania
+
+Projekt reprezentuje zaawansowany **System Wsparcia Klienta AI** sprzężony z **Interaktywnym Panelem Współpracy Live-Agent** oraz zaawansowaną **Bazą Wiedzy**. To idealne narzędzie przeznaczone do demonstracji możliwości nowoczesnej integracji modelów LLM (Gemini API) w systemach klasy SaaS (Software as a Service) oraz Customer Relationship Management (CRM) w Twoim portfolio programistycznym.
+
+---
+
+## 🎨 Główne Cechy i Możliwości
+
+Aplikacja jest pełnoekranową platformą składającą się z kilku sekcji, które wzajemnie się integrują:
+
+1. **Dashboard Analityczny**: 
+   - Monitorowanie w czasie rzeczywistym nastroju klientów (*customer sentiment*),
+   - Analiza pilności problemów (*urgency analysis*) wspierana przez klasyfikację AI,
+   - Statystyki aktywności botów i konsultantów wraz z dynamicznymi wykresami opartymi o bibliotekę **Recharts**.
+
+2. **Konsola Live-Chat (Wsparcie Konsultanta)**:
+   - Panel aktywnego agenta umożliwiający podgląd rozmów bota z klientami,
+   - Bezpośrednie przejmowanie konwersacji przez człowieka (*human handoff*),
+   - Inteligentne, kontekstowe sugestie odpowiedzi generowane dynamicznie przez AI w oparciu o treść rozmowy.
+
+3. **Baza Wiedzy (Knowledge Base)**:
+   - Moduł wyszukiwania artykułów pomocowych,
+   - Możliwość edycji i dodawania nowych wzorców wiedzy przez administratorów, które natychmiastowo zasilają kontekst bota AI.
+
+4. **Konsola Bezpieczeństwa (Security Sandbox)**:
+   - System symulacji audytu zjawiska *Prompt Injection* (testowanie odporności AI na ataki typu jailbreak),
+   - Moduł maskowania wrażliwych danych osobowych (PII - np. PESEL, numery telefonów, adresy e-mail) przed wysłaniem ich do zewnętrznych API.
+
+5. **Widżet Czatowy klienta (Chat Widget)**:
+   - Pływające, dynamiczne okienko czatu gotowe do przetestowania bezpośrednio z perspektywy klienta końcowego.
+
+---
+
+## 🚀 Technologie i Standardy Stylistyczne
+
+- **Frontend**: React (TypeScript), Vite, Motion (animacje i płynne przejścia)
+- **Stylizowanie**: Tailwind CSS (nowoczesny, ciemny, minimalistyczny wygląd o wysokim kontraście i zoptymalizowanym *negative space*)
+- **Ikony**: Lucide-React
+- **Wykresy i Wizualizacja**: Recharts
+- **Backend / Proxy**: Node.js + Express (obsługujący bezpieczne przekazywanie zapytań do API bez ujawniania kluczy autoryzacyjnych klientowi)
+- **Komunikacja z AI**: Gemini SDK (`@google/genai`)
+
+---
+
+## ⚙️ Jak Pobrać i Uruchomić Projekt Lokalnie (Krok Po Kroku)
+
+Zaprojektowaliśmy ten system tak, aby uruchomienie go na Twoim komputerze było jak najprostsze i trwało mniej niż 3 minuty. Wszystkie potrzebne automatyzacje (instalowanie zależności, przygotowanie konfiguracji, start serwerów) wykonują się automatycznie.
+
+---
+
+### Krok 0: Wymagane Środowisko (Node.js)
+
+Do działania projektu wymagane jest środowisko **Node.js** (silnik uruchomieniowy dla JavaScript/TypeScript).
+
+1. Wejdź na oficjalną stronę: **[https://nodejs.org](https://nodejs.org)**.
+2. Pobierz zalecaną wersję **LTS** (oznaczoną jako *Latest LTS* np. `v24.16.0` lub nowszą) poprzez kliknięcie na główny, niebieski/zielony przycisk pobierania.
+3. Przejdź standardowy proces instalacji (klikaj *Dalej / Next* aż do zakończenia instalacji).
+
+> [!IMPORTANT]
+> **Kluczowy krok po instalacji:** 
+> Jeśli miałeś otwarty jakikolwiek terminal lub czarne okno konsoli CMD/PowerShell – **musisz je całkowicie zamknąć**. Nowo zainstalowany program Node.js będzie widoczny w systemie Windows dopiero **w nowo otwartych oknach konsoli**.
+
+---
+
+### Krok 1: Pobranie i Rozpakowanie Projektu
+
+1. Jeśli pobierasz projekt z platformy **Google AI Studio**:
+   - Kliknij ikonę **koła zębatego (Ustawienia)** w prawym górnym rogu platformy Google AI Studio.
+   - Wybierz opcję **Export as ZIP** (lub połącz z GitHubem i sklonuj repozytorium).
+2. Rozpakuj pobrany plik `.zip` w dowolnym wybranym katalogu na swoim komputerze (np. na Pulpicie).
+
+---
+
+### Krok 2: Konfiguracja Bezpłatnego Klucza Gemini API (Sztuczna Inteligencja)
+
+Aplikacja wykorzystuje model AI (Gemini 3.5 Flash) do inteligentnego czatowania, kategoryzacji spraw i generowania propozycji dla agenta. Aby to działało:
+
+1. Wejdź na stronę **[Google AI Studio - Get API Key](https://aistudio.google.com/)** i wygeneruj swój unikalny darmowy klucz API (trwa to 15 sekund).
+2. W rozpakowanym folderze projektu znajdziesz plik o nazwie **`.env.example`**.
+3. Utwórz na jego podstawie nowy plik tekstowy o nazwie **`.env`** (lub po prostu zmień nazwę `.env.example` na `.env` za pomocą dowolnego edytora).
+4. Otwórz plik `.env` w Notatniku lub innym edytorze kodu i uzupełnij klucz:
+   ```env
+   GEMINI_API_KEY="TWÓJ_WYGENEROWANY_KLUCZ_GEMINI"
+   ```
+
+---
+
+### Krok 3: Automatyczne Uruchomienie (System One-Click)
+
+W katalogu projektu przygotowaliśmy dedykowane, inteligentne skrypty rozruchowe, które same zainstalują wymagane biblioteki i uruchomią system.
+
+#### 🖥️ Jeśli korzystasz z systemu Windows:
+1. Wejdź do folderu z projektem.
+2. Kliknij dwukrotnie lewym przyciskiem myszy na plik: **`URUCHOM_PROJEKT.bat`**.
+3. **Co się wydarzy?** Okno CMD sprawdzi czy masz poprawnie zainstalowany Node.js. Przy pierwszym uruchomieniu automatycznie wykona operację `npm install`, utworzy bezpieczny plik `.env` i wystartuje lokalny serwer.
+4. Okno konsoli powinno pozostać otwarte – zobaczysz w nim komunikat: *„Server running on http://localhost:3000”*.
+
+#### 🍎 Jeśli korzystasz z systemu macOS lub Linux:
+1. Otwórz Terminal i przejdź do katalogu z projektem (np. wpisując `cd `, a następnie przeciągając folder projektu do okna terminala i naciskając *Enter*).
+2. Nadaj uprawnienia do uruchomienia pliku rozruchowego (wymagane tylko raz):
+   ```bash
+   chmod +x uruchom_projekt.sh
+   ```
+3. Uruchom skrypt poleceniem:
+   ```bash
+   ./uruchom_projekt.sh
+   ```
+
+---
+
+## 🌐 Praca i Testowanie Aplikacji
+
+Gdy skrypt wystartuje serwer deweloperski, otwórz swoją przeglądarkę internetową (np. Chrome, Opera, Edge) i przejdź pod adres:
+
+👉 **[http://localhost:3000](http://localhost:3000)**
+
+Projekt działa w pełni **full-stackowo**! Wszystkie zapytania wysyłane z panelu czatu klienta trafiają do Twojego lokalnego serwera Express pod adresem `http://localhost:3000/api/*`, który następnie bezpiecznie (ukrywając Twój klucz API przed użytkownikiem w przeglądarce) komunikuje się bezpośrednio z sieciami neuronowymi Google Gemini w chmurze i natychmiastowo zwraca strukturyzowane odpowiedzi.
+
+---
+
+## 🛠️ Rozwiązywanie Problemów (FAQ)
+
+### 1. "Okno mignęło i natychmiast się zamknęło (nie widzę żadnego błędu)"
+- **Powód:** Uruchamiasz skrypt `URUCHOM_PROJEKT.bat` po raz pierwszy tuż po instalacji Node.js, a system operacyjny nie odświeżył jeszcze zmiennych środowiskowych.
+- **Rozwiązanie:** Zamknij całkowicie wszystkie otwarte foldery i okna terminali. Spróbuj kliknąć plik `.bat` ponownie. Gdyby to nadal nie działało, uruchom systemową aplikację `Wiersz polecenia` (cmd) ręcznie, przejdź do folderu projektu za pomocą polecenia `cd` i wpisz `URUCHOM_PROJEKT.bat` – dzięki temu konsola nie zamknie się po błędzie i pozwoli Ci przeczytać dokładnie co poszło nie tak.
+
+### 2. Błąd "Port 3000 is already in use" (Port 3000 jest zajęty)
+- **Powód:** Inna aplikacja w Twoim systemie (często lokalne środowiska typu Docker, inny projekt programistyczny lub proces w tle) korzysta z portu 3000.
+- **Rozwiązanie:** Zamknij programy blokujące port lub zmień zmienną portu w pliku `server.ts` (linia z `const PORT = 3000;`) na inną wartość, np. `3005`, i uruchom projekt ponownie.
+
+### 3. "Wpisałem klucz Gemini, ale bot nie odpowiada lub sypie błędami"
+- **Powód:** Brak lub niepoprawny klucz w pliku `.env`, bądź brak połączenia z siecią.
+- **Rozwiązanie:** Upewnij się, czy plik na pewno nazywa się dokładnie `.env` (a nie `.env.txt` lub `.env.example`). Upewnij się również, czy klucz API nie zawiera zbędnych spacji wokół cudzysłowów. Wygeneruj nowy klucz, jeśli stary uległ przedawnieniu.
+
+---
+
+## 📂 Struktura Kodowa Projektu (Dla Rekrutera / Architekta)
+
+Dla osób chcących zapoznać się ze strukturą architektoniczną systemu:
+- `server.ts` – Główny kontroler serwera Express. Obsługuje middleware deweloperskie Vite, zarządza bezpiecznym API Proxy dla Gemini (w tym maskowaniem PII i prompt injection guards) oraz obsługuje statyczne serwowanie plików produkcyjnych.
+- `src/App.tsx` – Główny komponent interfejsu klienta, obsługujący globalne stany, nawigację i reaktywną synchronizację modułów.
+- `src/components/` – Podzielone moduły UI:
+  - `Dashboard.tsx` – Panele analityczne w czasie rzeczywistym z wykresami typu Recharts.
+  - `LiveChat.tsx` – Konsola aktywnego wdrożenia z mechanizmem Human Handoff i sugestiami AI.
+  - `KnowledgeBase.tsx` – System bazodanowy CRUD dla artykułów bazy pomocowej.
+  - `SecurityConsole.tsx` – Środowisko testowe bezpieczeństwa promptów (Prompt Injection Testing).
+  - `ChatWidget.tsx` – Widget pływający dla klienta końcowego.
+- `src/types.ts` – Zestaw interfejsów i typów TypeScript zapewniający pełną spójność i type-safety w całym ekosystemie.

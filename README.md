@@ -1,81 +1,36 @@
-# 🤖 AI Customer Support Platform
-
-Advanced AI-powered customer support system featuring an intelligent chatbot, live-agent collaboration tools, analytics dashboard, knowledge base management, and AI security testing environment.
-
-This project demonstrates practical implementation of modern Large Language Models (LLMs) within SaaS-style customer support and CRM environments using Google Gemini API.
-
----
-
-# 🚀 Features
-
-## 📊 AI Analytics Dashboard
-- Real-time customer sentiment monitoring
-- AI-powered urgency analysis
-- Live support activity tracking
-- Interactive analytics charts using Recharts
-
----
-
-## 💬 AI Customer Support Chat
-- Intelligent AI chatbot powered by Gemini API
-- Context-aware responses
-- Human handoff simulation
-- AI-generated support suggestions
-
----
-
-## 🧠 Knowledge Base System
-- Searchable help articles
-- Dynamic knowledge management
-- AI context enhancement using custom data
-
----
-
-## 🔒 AI Security Sandbox
-- Prompt Injection testing environment
-- PII (Personally Identifiable Information) masking
-- AI safety simulations and protection mechanisms
-
----
-
-## 🖥 Customer Chat Widget
-- Interactive floating chat interface
-- Real-time AI communication
-- Modern responsive UI
-
----
-
-# 🛠 Technologies Used
-
-## Frontend
-- React
-- TypeScript
-- Vite
-- Tailwind CSS
-- Framer Motion
-- Recharts
-- Lucide React
-
-## Backend
-- Node.js
-- Express
-
-## AI Integration
-- Google Gemini API
-- @google/genai SDK
-
----
-
-# ⚙️ Installation & Setup
-
-## 1. Install Node.js
-Download and install the latest LTS version of Node.js from:
-
-https://nodejs.org
-
----
-
-## 2. Clone or Download the Project
-
-```bash
-git clone (https://github.com/Majkel4221/AI-Customer-Support)
+{
+  "name": "react-example",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx server.ts",
+    "build": "vite build && esbuild server.ts --bundle --platform=node --format=cjs --packages=external --sourcemap --outfile=dist/server.cjs",
+    "start": "node dist/server.cjs",
+    "clean": "rm -rf dist",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@google/genai": "^1.29.0",
+    "@tailwindcss/vite": "^4.1.14",
+    "@vitejs/plugin-react": "^5.0.4",
+    "dotenv": "^17.2.3",
+    "express": "^4.21.2",
+    "lucide-react": "^0.546.0",
+    "motion": "^12.23.24",
+    "react": "^19.0.1",
+    "react-dom": "^19.0.1",
+    "recharts": "^3.8.1",
+    "vite": "^6.2.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.14.0",
+    "autoprefixer": "^10.4.21",
+    "esbuild": "^0.25.0",
+    "tailwindcss": "^4.1.14",
+    "tsx": "^4.21.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.3"
+  }
+}
